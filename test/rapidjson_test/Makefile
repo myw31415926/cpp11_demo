@@ -1,0 +1,16 @@
+# rapidjson_test Makefile
+
+TARGET = ../_build/rapidjson_test
+
+INCS = -I../../util/ -I../../lib/rapidjson/include
+SRCS = $(wildcard *.cpp)
+
+CFLAGS = -Wall -g -std=c++11
+LFLAGS =
+
+$(TARGET): $(SRCS)
+	$(CXX) -o $(TARGET) $(INCS) $(SRCS) $(CFLAGS) $(LFLAGS)
+
+.PHONY: clean
+clean:
+	rm $(TARGET)
